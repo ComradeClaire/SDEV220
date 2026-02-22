@@ -1,0 +1,94 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6f2df160-07fc-4eea-ad94-cd00a997a3e4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import bisect\n",
+    "\n",
+    "def binary_search_bisect(arr, x):\n",
+    "    i = bisect.bisect_left(arr, x)\n",
+    "    if i != len(arr) and arr[i] == x:\n",
+    "        return i\n",
+    "    else:\n",
+    "        return -1\n",
+    "\n",
+    "arr = [2, 3, 4, 10, 40]\n",
+    "x = 10\n",
+    "result = binary_search_bisect(arr, x)\n",
+    "\n",
+    "if result != -1:\n",
+    "    print(\"Element is present at index\", result)\n",
+    "else:\n",
+    "    print(\"Element is not present in array\")\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f2a912a7-e8fd-4f29-9d89-139a86ee4007",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def sort012(arr):\n",
+    "    c0 = 0\n",
+    "    c1 = 0\n",
+    "    c2 = 0\n",
+    "    \n",
+    "    for num in arr:\n",
+    "        if num == 0:\n",
+    "            c0 += 1\n",
+    "        elif num == 1:\n",
+    "            c1 += 1\n",
+    "        else:\n",
+    "            c2 += 1\n",
+    "\n",
+    "    idx = 0\n",
+    "    \n",
+    "    for i in range(c0):\n",
+    "        arr[idx] = 0\n",
+    "        idx += 1\n",
+    "\n",
+    "    for i in range(c1):\n",
+    "        arr[idx] = 1\n",
+    "        idx += 1\n",
+    "\n",
+    "    for i in range(c2):\n",
+    "        arr[idx] = 2\n",
+    "        idx += 1\n",
+    "\n",
+    "if __name__ == \"__main__\":\n",
+    "    arr = [0, 1, 2, 0, 1, 2]\n",
+    "    sort012(arr)\n",
+    "    \n",
+    "    for x in arr:\n",
+    "        print(x, end = \" \")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
